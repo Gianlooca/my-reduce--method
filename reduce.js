@@ -7,14 +7,15 @@
 
 // Summing an array of numbers:
 const nums = [0, 1, 2, 3, 4];
-let sum = nums.reduce((acc, curr) => {
-  console.log(
-    "Accumulator:", acc,
-    "Current value", curr,
-    "Total:", acc + curr
-  );
-  return acc + curr;
-}, 0);
+// let sum = nums.reduce((acc, curr) => {
+//   console.log(
+//     "Accumulator:", acc,
+//     "Current value", curr,
+//     "Total:", acc + curr
+//   );
+//   return acc + curr;
+// }, 0);
+// console.log(sum);
 /**
  * The callback function executes four times, once for each element of the array
  * (excluding the initial element of the array, and we'll get to why that is in a moment).
@@ -37,6 +38,10 @@ let sum = nums.reduce((acc, curr) => {
  * BEHAVIOURS AND STRANGE BUGS IN OUR CODE.
  * 
  */
+
+// We can simplify the upper callback function by turning it back into a one liner, and explicitly specifying
+// the initial value of zero:
+let sum = nums.reduce((acc, curr) => acc + curr, 0);
 console.log(sum);
 
 const teamMembers = [
